@@ -2,4 +2,13 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 <%
+	request.setCharacterEncoding("utf-8");
+	Connection conn = null;
+	try {
+		String url = "jdbc:oracle:thin:@//localhost:1521/xe";
+		Class.forName("oracle.jdbc.OracleDriver");
+		conn = DriverManager.getConnection(url, "system", "1234");
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
 %>

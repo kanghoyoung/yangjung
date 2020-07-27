@@ -8,21 +8,33 @@
 <link type="text/css" rel="stylesheet" href="../css/index.css">
 <script>
 function check() {
-	if(document.form.id.value=="") {
-		alert('이름을 입력하세요.');
+	if(document.form.id.value == "") {
+		alert('아이디를 입력하세요.');
 		document.form.id.focus();
+		return;
+	} else if(document.form.name.value == "") {
+		alert('이름을 입력하세요.');
+		document.form.name.focus();
+		return;
+	} else if(document.form.password.value == "") {
+		alert('비밀번호를 입력하세요.');
+		document.form.password.focus();
 		return;
 	}
 	document.form.submit();
 }
 function email_change() {
-	if(document.form.email2.options[document.form.email.selectedIndex].value == '1') {
-		document.form.email.disabled = true;
-		document.form.email.value = "";
+	if(document.form.email.options[document.form.email.selectedIndex].value == '1') {
+		document.form.email2.disabled = true;
+		document.form.email2.value = "";
 	}
-	
+	if(document.form.email.options[document.form.email.selectedIndex].value == '2') {
+		document.form.email2.disable = false;
+		document.form.email2.value = "";
+		document.form.email2.focus();
 	} else {
-		
+		document.form.email2.disabled = true;
+		document.form.email2.value = document.form.email.options[document.form.email.selectedIndex].value;
 	}
 }
 </script>
@@ -106,6 +118,17 @@ function email_change() {
 						<option value="18">18</option>
 						<option value="19">19</option>
 						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">23</option>
+						<option value="24">24</option>
+						<option value="25">25</option>
+						<option value="26">26</option>
+						<option value="27">27</option>
+						<option value="28">28</option>
+						<option value="29">29</option>
+						<option value="30">30</option>
+						<option value="31">31</option>
 					</select>
 					일
 				</td>
@@ -113,16 +136,17 @@ function email_change() {
 			<tr>
 				<th>이메일</th>
 				<td>
-					<input type="text" name="email" disabled>@
-					<input type="text" name="email2">
+					<input type="text" name="eamil1" value="이메일" onfocus="this.value='';">@
+					
+					<input type="text" name="email2" value="" disabled>
 					<select name="email" onchange="email_change()">
 						<option value="1">선택하세요</option>
 						<option value="2">직접입력</option>
-						<option value="3">naver.com</option>
-						<option value="4">daum.net</option>
-						<option value="5">nate.com</option>
-						<option value="6">hotmail.com</option>
-						<option value="7">gamil.com</option>
+						<option value="naver.com">naver.com</option>
+						<option value="daum.net">daum.net</option>
+						<option value="nate.com">nate.com</option>
+						<option value="hotmail.com">hotmail.com</option>
+						<option value="gmail.com">gmail.com</option>
 					</select>
 				</td>
 			</tr>
@@ -135,7 +159,7 @@ function email_change() {
 			<tr>
 				<th>주소</th>
 				<td>
-					<input type="text" name="adress" size="30">
+					<input type="text" name="address" size="30">
 				</td>
 			</tr>
 			<tr>
