@@ -19,18 +19,18 @@
 		String email = request.getParameter("email");
 		String phone = request.getParameter("phone");
 		String address = request.getParameter("address");
-		sql = "INSERT INTO pMember values(?, ?, ?, ?, ?, ?, ?, ?, sysdate)";
+		sql = "INSERT INTO pMember VALUES(?, ?, ?, ?, ?, ?, ?, ?, sysdate)";
 		pstmt = conn.prepareStatement(sql);
 	} catch (Exception e) {
 		e.printStackTrace();
 	} finally {
-		if(conn!=null){
+		if(conn != null) {
 			conn.close();
 		}
-		if(rs!=null){
+		if(rs != null) {
 			rs.close();
 		}
-		if(pstmt!=null){
+		if(pstmt != null) {
 			pstmt.close();
 		}
 	}
