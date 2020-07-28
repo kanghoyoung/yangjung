@@ -7,10 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<footer>
-		<div class="center">
-			ⓒ yangjung WebMarket
-		</div>
-	</footer>
+
 </body>
 </html>

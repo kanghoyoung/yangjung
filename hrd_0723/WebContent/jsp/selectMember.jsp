@@ -76,7 +76,7 @@
 			}
 %>
 		</table>
-		<div class="font"?>
+		<div class="font">
 			<input type="button" value="작성" onclick="location='addMember.jsp'">
 		</div>
 <%		
