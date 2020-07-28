@@ -70,7 +70,7 @@
 				<td><%=phone %></td>
 				<td><%=address %></td>
 				<td><%=titmestamp %></td>
-				<td><a href="modify.jsp?id=<%=id %>">수정</a> / <a href="delete.jsp?id=<%=id %>">삭제</a></td>
+				<td><a href="modify.jsp?id=<%=id %>">수정</a> / <a onclick="return confirm('정말로 삭제하시겠습니까?')" href="delete.jsp?id=<%=id %>">삭제</a></td>
 			</tr>
 <%
 			}

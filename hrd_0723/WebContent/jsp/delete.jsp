@@ -7,22 +7,17 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<script>
-var delete_ok = confirm('정말로 삭제하시겠습니까?');
-</script>
 <body>
 <%
+String sql = "";
 	try {
 		String id = request.getParameter("id");
 		Statement stmt = conn.createStatement();
-		String sql = "DELETE FROM pMember WHERE id = " + id;
+		sql = "DELETE FROM pMember WHERE id = " + id;
 		stmt.executeUpdate(sql);
 %>
 <script>
-	if (delete_ok) {
-		alert('삭제되었습니다.');
-	}
-	location.href="selectMember.jsp";
+		location.href="selectMember.jsp";
 </script>
 <%
 	} catch (Exception e) {
