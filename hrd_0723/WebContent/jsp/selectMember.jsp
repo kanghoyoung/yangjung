@@ -30,6 +30,10 @@
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
 %>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<% out.println("총 " + count + "개의 상품이 있습니다."); %>
 		<table border="1">
 			<tr>
@@ -52,14 +56,29 @@
 				String gender = rs.getString(4);
 				String birth = rs.getString(5);
 				String mail = rs.getString(6);
-				String address = rs.getString(7);
-				String titmestamp = rs.getString(8);
+				String phone = rs.getString(7);
+				String address = rs.getString(8);
+				String titmestamp = rs.getString(9);
 %>
-			
+			<tr>
+				<td><%=id %></td>
+				<td><%=name %></td>
+				<td><%=password %></td>
+				<td><%=gender %></td>
+				<td><%=birth %></td>
+				<td><%=mail %></td>
+				<td><%=phone %></td>
+				<td><%=address %></td>
+				<td><%=titmestamp %></td>
+				<td><a href="modify.jsp?id=<%=id %>">수정</a> / <a href="delete.jsp?id=<%=id %>">삭제</a></td>
+			</tr>
 <%
 			}
 %>
 		</table>
+		<div class="font"?>
+			<input type="button" value="작성" onclick="location='addMember.jsp'">
+		</div>
 <%		
 	} catch (Exception e) {
 		e.printStackTrace();
