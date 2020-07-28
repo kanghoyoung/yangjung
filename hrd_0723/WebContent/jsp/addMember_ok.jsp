@@ -25,7 +25,7 @@
 		pstmt.setString(3, name);
 		pstmt.setString(4, gender);
 		pstmt.setString(5, birth + "-" + month + "-" + day);
-		pstmt.setString(6, email1 + email);
+		pstmt.setString(6, email1 + "@" + email);
 		pstmt.setString(7, phone);
 		pstmt.setString(8, address);
 		pstmt.executeUpdate();

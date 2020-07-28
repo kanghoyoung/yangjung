@@ -147,6 +147,7 @@ function email_change() {
 						<option value="nate.com">nate.com</option>
 						<option value="hotmail.com">hotmail.com</option>
 						<option value="gmail.com">gmail.com</option>
+						<option value="hanmail.net">hanmail.net</option>
 					</select>
 				</td>
 			</tr>
