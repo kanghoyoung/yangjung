@@ -166,7 +166,7 @@ function email_change() {
 			<tr>
 				<td colspan="2" align="center">
 					<input type="button" value="등록" onclick="javascript:check()">
-					<input type="reset" value="취소">
+					<input type="button" value="취소" onclick="location='addMember.jsp'">
 				</td>
 			</tr>
 		</table>

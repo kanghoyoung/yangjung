@@ -13,7 +13,7 @@
 			<li><a id="logo" href="#">로그인</a></li>
 			<li><a id="logo" href="addMember.jsp">회원 가입</a></li>
 			<li><a id="logo" href="selectMember.jsp">상품 목록</a></li>
-			<li><a id="logo" href="#">상품 등록</a></li>
+			<li><a id="logo" href="addProduct.jsp">상품 등록</a></li>
 			<li><a id="logo" href="#">상품 수정</a></li>
 			<li><a id="logo" href="#">상품 삭제</a></li>
 			<li><a id="logo" href="#">게시판</a></li>
