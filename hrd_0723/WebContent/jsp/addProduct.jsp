@@ -7,19 +7,46 @@
 <title>Insert title here</title>
 <script>
 function check() {
-	if(document.form.code.value == "") {
+	
+	var productId = document.getElementById("productId");
+	var name = document.getElementById("name");
+	var unitPrice = document.getElementById("unitPrice");
+	var unitsinstock = document.getElementById("unitsinstock");
+	
+	if(document.form.productId.value == "") {
 		alert('상품코드를 입력하세요.');
-		document.form.code.focus();
+		document.form.productId.focus();
 		return;
 	} else if(document.form.name.value == "") {
 		alert('상품명을 입력하세요.');
 		document.form.name.focus();
 		return;
+	} else if(!document.form.unitPrice.value) {
+		alert('가격을 입력하세요.');
+		document.form.unitPrice.focus();
+		return;
+	} else if(name.value.length < 4 || name.value.length > 12) {
+		alert('[상품명]\n최소 4자에서 최대 50자까지 입력하세요.');
+		document.form.name.focus();
+		return;
+	} else if(unitPrice.value.length == 0 || isNaN(unitPrice.value)) {
+		alert('[가격]\n숫자만 입력하세요.');
+		document.form.unitPrice.focus();
+		return;
+	} else if(unitPrice.value < 0) {
+		alert('[가격]\n음수를 입력할 수 없습니다.');
+		document.form.unitPrice.focus();
+		return;
+	} else if(unitsinstock.value.length == 0 || inNaN(unitsinstock.value)) {
+		alert('[재고]\n숫자만 입력하세요.');
+		document.form.unitsinstock.focus();
+		return;
+	} else if(unitsinstock.value < 0) {
+		alert('[재고]\n음수를 입력할 수 없습니다.');
+		document.form.unitsinstock.focus();
+		return;
 	}
 	document.form.submit();
-}
-function check_1() {
-	
 }
 </script>
 </head>
@@ -34,19 +61,19 @@ function check_1() {
 			<tr>
 				<th width="300px">상품코드</th>
 				<td width="500px">
-					<input type="text" name="code" size="30">
+					<input type="text" id="productId" name="code" size="30">
 				</td>
 			</tr>
 			<tr>
 				<th>상품명</th>
 				<td>
-					<input type="text" name="name" size="30" onclick="javascript:check_1()">
+					<input type="text" id="name" name="name" size="30">
 				</td>
 			</tr>
 			<tr>
 				<th>가 격</th>
 				<td>
-					<input type="text" name="price" size="30">
+					<input type="text" id="unitPrice" name="price" size="30">
 				</td>
 			</tr>
 			<tr>
@@ -62,7 +89,7 @@ function check_1() {
 				</td>
 			</tr>
 			<tr>
-				<th>분류</th>
+				<th>분 류</th>
 				<td>
 					<input type="text" name="category" size="30">
 				</td>
@@ -70,7 +97,7 @@ function check_1() {
 			<tr>
 				<th>재고수</th>
 				<td>
-					<input type="text" name="unitsinstock" size="30">
+					<input type="text" id="unitsinstock" name="unitsinstock" size="30">
 				</td>
 			</tr>
 			<tr>
