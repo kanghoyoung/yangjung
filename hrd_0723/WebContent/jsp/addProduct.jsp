@@ -16,37 +16,30 @@ function check() {
 	if(document.form.productId.value == "") {
 		alert('상품코드를 입력하세요.');
 		document.form.productId.focus();
-		return;
 	} else if(document.form.name.value == "") {
 		alert('상품명을 입력하세요.');
 		document.form.name.focus();
-		return;
-	} else if(!document.form.unitPrice.value) {
+	} else if(document.form.unitPrice.value == "") {
 		alert('가격을 입력하세요.');
 		document.form.unitPrice.focus();
-		return;
 	} else if(name.value.length < 4 || name.value.length > 12) {
 		alert('[상품명]\n최소 4자에서 최대 50자까지 입력하세요.');
 		document.form.name.focus();
-		return;
 	} else if(unitPrice.value.length == 0 || isNaN(unitPrice.value)) {
 		alert('[가격]\n숫자만 입력하세요.');
 		document.form.unitPrice.focus();
-		return;
 	} else if(unitPrice.value < 0) {
 		alert('[가격]\n음수를 입력할 수 없습니다.');
 		document.form.unitPrice.focus();
-		return;
 	} else if(unitsinstock.value.length == 0 || inNaN(unitsinstock.value)) {
 		alert('[재고]\n숫자만 입력하세요.');
 		document.form.unitsinstock.focus();
-		return;
 	} else if(unitsinstock.value < 0) {
 		alert('[재고]\n음수를 입력할 수 없습니다.');
 		document.form.unitsinstock.focus();
-		return;
+	} else {
+		document.form.submit();
 	}
-	document.form.submit();
 }
 </script>
 </head>
