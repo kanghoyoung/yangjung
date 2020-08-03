@@ -8,7 +8,7 @@
 <link type="text/css" rel="stylesheet" href="../css/index.css">
 </head>
 <body>
-<header>
+<header><br><br>
 <h3 align="center">(과정평가형 정보처리산업기사)인사관리 시스템ver 1.0</h3>
 </header>
 </body>

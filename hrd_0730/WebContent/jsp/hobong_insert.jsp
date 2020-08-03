@@ -31,7 +31,6 @@
 			<td><input type="text" name="salary" size="30"></td>
 		</tr>
 		<tr>
-			<td>
 				<td colspan="2" align="center">
 				<input type="submit" value="등록">
 				<input type="button" value="취소" onclick="location='hobong_select.jsp'">

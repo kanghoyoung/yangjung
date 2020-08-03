@@ -4,6 +4,10 @@
 	padding: 0;
 }
 
+.center {
+	text-align: center;
+}
+
 /* header */
 header {
 	width: 100%;

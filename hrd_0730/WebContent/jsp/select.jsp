@@ -55,7 +55,21 @@
 			<td><%=seq %></td>
 			<td><%=name %></td>
 			<td><a href="modify.jsp?id=<%=id %>"><%=id %></a></td>
-			<td><%=position %></td>
+			<td>
+<% 
+			if(position.equals("1")) {
+				out.println("인사부");
+			} else if (position.equals("2")) {
+				out.println("기획부");
+			} else if (position.equals("3")) {
+				out.println("홍보부");
+			} else if (position.equals("4")) {
+				out.println("영업부");
+			} else if (position.equals("5")) {
+				out.println("경리부");
+			}
+%>
+			</td>
 			<td><%=duty %></td>
 			<td><%=phone %></td>
 			<td>

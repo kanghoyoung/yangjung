@@ -9,7 +9,10 @@
 </head>
 <body>
 <footer>
+<br>
+<div class="center">
 ⓒ yangjung WebMarket
+</div>
 </footer>
 </body>
 </html>
