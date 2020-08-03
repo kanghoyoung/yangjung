@@ -60,7 +60,7 @@
 		<tr>
 			<td colspan="2" align="center">
 				<input type="submit" value="등록">
-				<input type="button" value="취소">
+				<input type="button" value="취소" onclick="location='index.jsp'">
 			</td>
 		</tr>
 	</table>

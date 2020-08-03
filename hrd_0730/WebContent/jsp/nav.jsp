@@ -12,9 +12,9 @@
 	<ul>
 		<li><a href="#">조회</a></li>
 		<li><a href="insert.jsp">사원등록</a></li>
-		<li><a href="#">호봉등록</a></li>
+		<li><a href="hobong_insert.jsp">호봉등록</a></li>
 		<li><a href="select.jsp">사원정보</a></li>
-		<li><a href="#">호봉정보</a></li>
+		<li><a href="hobong_select.jsp">호봉정보</a></li>
 		<li><a href="#">종료</a></li>
 		<li><a href="#">홈으로</a></li>
 	</ul>
