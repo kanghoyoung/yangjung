@@ -16,9 +16,9 @@
 		<li><a href="insert_sudang.jsp">수당등록</a></li>
 		<li><a href="select.jsp">사원정보</a></li>
 		<li><a href="hobong_select.jsp">호봉정보</a></li>
-		<li><a href="#">수당정보</a></li>
+		<li><a href="SudangSelect.jsp">수당정보</a></li>
 		<li><a href="#">종료</a></li>
-		<li><a href="#">홈으로</a></li>
+		<li><a href="index.jsp">홈으로</a></li>
 	</ul>
 </nav>
 </body>
