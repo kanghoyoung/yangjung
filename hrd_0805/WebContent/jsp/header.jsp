@@ -10,7 +10,7 @@
 <body>
 <header>
 <br><br>
-수강신청 도우미 사이트
+<h1 align="center">수강신청 도우미 사이트</h1>
 </header>
 </body>
 </html>
