@@ -31,54 +31,60 @@ function lecturer_check() {
 <section>
 <%
 	request.setCharacterEncoding("utf-8");
+	int idx = Integer.parseInt(request.getParameter("idx"));
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	String sql = "";
-	int seq = 0;
+	String name = "";
+	String major = "";
+	String field = "";
 	try {
-		String seq_sql = "SELECT lecturer_seq.nextval FROM DUAL";
-		pstmt = conn.prepareStatement(seq_sql);
+		String update = "SELECT * FROM teachertbl WHERE idx = ?";
+		pstmt = conn.prepareStatement(update);
+		pstmt.setInt(1, idx);
 		rs = pstmt.executeQuery();
 		if(rs.next()) {
-			seq = rs.getInt(1);
+			name = rs.getString(2);
+			major = rs.getString(3);
+			field = rs.getString(4);
 		}
 	} catch (Exception e) {
 		e.printStackTrace();
 	} finally {
-		if(conn != null) {
+		if(conn!=null){
 			conn.close();
 		}
-		if(pstmt != null) {
-			pstmt.close();
-		}
-		if(rs != null) {
+		if(rs!=null){
 			rs.close();
+		}
+		if(pstmt!=null){
+			pstmt.close();
 		}
 	}
 %>
 <h1 align="center">강사 추가</h1>
-<form name="lecturer_form" method="post" action="insertLecturer_ok.jsp" >
+<form name="lecturer_form" method="post" action="modify_lecturer_ok.jsp" >
 	<table border="1">
 		<tr>
 			<th>강사 ID</th>
-			<td><input type="text" name="lecturerId" value="<%=seq %>">자동증가(Sequence 발생)</td>
+			<td><input type="text" name="lecturerId" value="<%=idx %>">자동증가(Sequence 발생)</td>
 		</tr>
 		<tr>
 			<th>강 사 명</th>
-			<td><input type="text" name="lecturerName"></td>
+			<td><input type="text" name="lecturerName" value="<%=name %>"></td>
 		</tr>
 		<tr>
 			<th>전 공</th>
-			<td><input type="text" name="major"></td>
+			<td><input type="text" name="major" value="<%=major %>"></td>
 		</tr>
 		<tr>
 			<th>세부 전공</th>
-			<td><input type="text" name="detailMajor"></td>
+			<td><input type="text" name="detailMajor" value="<%=field %>"></td>
 		</tr>
 		<tr>
 			<td colspan="2" align="center">
-				<input type="button" value="목록">
-				<input type="button" value="저장" onclick="javascript:lecturer_check()">
+				<input type="button" value="목록" onclick="location='selectLecturer.jsp'">
+				<input type="button" value="수정" onclick="javascript:lecturer_check()">
 			</td>
 		</tr>
 	</table>
