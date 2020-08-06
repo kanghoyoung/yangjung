@@ -12,7 +12,7 @@
 <ul>
 	<li><a href="insertSchool.jsp">학사 정보 추가</a></li>
 	<li><a href="insertGwamok.jsp">교과목 추가</a></li>
-	<li><a href="#">강사 추가</a></li>
+	<li><a href="insertLecturer.jsp">강사 추가</a></li>
 	<li><a href="#">수강정보 추가</a></li>
 	<li><a href="selectSchool.jsp">학사 정보 조회</a></li>
 	<li><a href="selectGwamok.jsp">교과목 조회</a></li>
