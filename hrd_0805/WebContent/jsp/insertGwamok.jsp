@@ -44,15 +44,15 @@ function check() {
 	<table border="1">
 		<tr>
 			<th>교과목 코드</th>
-			<td><input type="text" name="code"></td>
+			<td><input type="text" name="code" maxlength="5"></td>
 		</tr>
 		<tr>
 			<th>과 목 명</th>
-			<td><input type="text" name="gwamok"></td>
+			<td><input type="text" name="gwamok" maxlength="40"></td>
 		</tr>
 		<tr>
 			<th>학 점</th>
-			<td><input type="text" name="score"></td>
+			<td><input type="text" name="score" maxlength="6"></td>
 		</tr>
 		<tr>
 			<th>담 당 강 사</th>
