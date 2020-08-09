@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	padding: 15px 0 0 20px;
+	width: 100%;
+	height: 100px;
+	background-color: blue;
+	color: white;
+}
+
+nav {
+	margin: 0;
+	padding: 10px 0 0 0;
+	float: left;
+	width: 100%;
+	height: 30px;
+	background-color: violet;
+}
+
+nav ul {
+	list-style: none;
+}
+
+nav ul li {
+	margin: 0 10px;
+	float: left; /* 가로배치 */
+	list-style: none;
+}
+
+nav a {
+	display: block;
+	padding: 5px 5px 8px 5px;
+	height: 20px;
+	text-decoration: none; /* 밑줄제거 */
+	color: white;
+}
+
+section {
+	width: 100%;
+	height: 980px;
+	background-color: gray;
+}
+
+footer {
+	width: 100%;
+	height: 50px;
+	background-color: blue;
+	color: white;
+}
+
+/* 가운데 정렬 */
+.center {
+	text-align: center;
+}
+
+/* 테이블 가운데 정렬 */
+table {
+	width: 80%;
+	margin: auto;
+}
