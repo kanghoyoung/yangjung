@@ -1,1 +1,61 @@
 @charset "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	width: 100%;
+	height: 100px;
+	background-color: #0099FF;
+	padding: 15px 0 0 20px;
+	color: white;
+}
+
+nav {
+	margin: 0;
+	padding: 10px 0 0 0;
+	width: 100%;
+	height: 30px;
+	float: left;
+	background-color: #660099;
+}
+
+nav ul {
+	list-style: none;
+}
+
+nav ul li {
+	float: left;
+	list-style: none;
+	margin: 0 10px;
+}
+
+nav a {
+	display: block;
+	padding: 5px 5px 8px 5px;
+	height: 20px;
+	text-decoration: none;
+	color: white;
+}
+
+footer {
+	width: 100%;
+	height: 50px;
+	background-color: gray;
+	color: white;
+}
+
+section {
+	width: 100%;
+	height: 980px;
+}
+
+table {
+	margin: auto;
+	width: 60%;
+}
+
+.center {
+	text-align: center;
+}

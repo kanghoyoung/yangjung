@@ -8,7 +8,8 @@
 </head>
 <body>
 <header>
-쇼핑몰 회원관리 ver1.0
+<br><br>
+<h2 align="center">쇼핑몰 회원관리 ver1.0</h2>
 </header>
 </body>
 </html>
