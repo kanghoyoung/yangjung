@@ -33,7 +33,6 @@
 <br>
 <table border="1">
 	<tr>
-		<th>no</th>
 		<th>상품코드</th>
 		<th>상품명</th>
 		<th>가격</th>
@@ -55,7 +54,6 @@
 		condition = rs.getString(8);
 %>
 	<tr>
-		<td></td>
 		<td><%=productid %></td>
 		<td><%=productname %></td>
 		<td><%=unitprice %></td>
