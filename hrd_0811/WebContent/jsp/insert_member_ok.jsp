@@ -21,40 +21,44 @@
 	
 	String sql2 = "";
 	try {
-		sql2 = "SELECT * FROM member0811";
+		sql2 = "SELECT * FROM member0811 WHERE id = ?";
 		pstmt = conn.prepareStatement(sql2);
+		pstmt.setInt(1, db_id);
 		rs = pstmt.executeQuery();
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+		// 등록된 아이디가 있는 경우
 		if(rs.next()) {
-			int db_id2 = rs.getInt(1);
-			
-			if(db_id2==db_id) {
 %>
 <script>
 alert('이미 등록된 아이디입니다.');
-location.href="insert_member.jsp";
+history.back();
 </script>
 <%
-			} else {
-				sql = "INSERT INTO member0811 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
-				pstmt = conn.prepareStatement(sql);
-				pstmt.setInt(1, db_id);
-				pstmt.setString(2, passwd);
-				pstmt.setString(3, name);
-				pstmt.setString(4, gender);
-				pstmt.setString(5, birth);
-				pstmt.setString(6, input_email + "@" + email_select);
-				pstmt.setString(7, phone_select + "-" + phone_1 + "-" + phone_2);
-				pstmt.setString(8, address);
-				pstmt.setString(9, nickname);
-				pstmt.executeUpdate();
-		}
-	}
+		} else {
 %>
 <script>
 self.window.alert('등록되었습니다.');
 location.href="insert_member.jsp";
 </script>
 <%
+		try {
+			sql = "INSERT INTO member0811 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, db_id);
+			pstmt.setString(2, passwd);
+			pstmt.setString(3, name);
+			pstmt.setString(4, gender);
+			pstmt.setString(5, birth);
+			pstmt.setString(6, input_email + "@" + email_select);
+			pstmt.setString(7, phone_select + "-" + phone_1 + "-" + phone_2);
+			pstmt.setString(8, address);
+			pstmt.setString(9, nickname);
+			pstmt.executeUpdate();
+
+	} catch (Exception e) {
+		e.printStackTrace();
 	} finally {
 		if(conn!=null){
 			conn.close();
@@ -66,4 +70,5 @@ location.href="insert_member.jsp";
 			pstmt.close();
 		}
 	}
+}
 %>

@@ -12,6 +12,14 @@ function insert_product() {
 		alert('상품번호를 입력하세요.');
 		document.insert_product_form.code.focus();
 		return;
+	} else if(document.insert_product_form.name.value == '') {
+		alert('상품명을 입력하세요.');
+		document.insert_product_form.name.focus();
+		return;
+	} else if(document.insert_product_form.price.value == '') {
+		alert('가격을 입력하세요.');
+		document.insert_product_form.price.focus();
+		return;
 	}
 	document.insert_product_form.submit();
 }
@@ -26,40 +34,40 @@ function insert_product() {
 	<table border="1">
 		<tr>
 			<td align="center">상품코드</td>
-			<td colspan="4"><input type="text" name="code"></td>
+			<td colspan="4"><input type="text" name="code" size="100"></td>
 		</tr>
 		<tr>
 			<td align="center">상품명</td>
-			<td colspan="4"><input type="text" name="name"></td>
+			<td colspan="4"><input type="text" name="name" size="100"></td>
 		</tr>
 		<tr>
 			<td align="center">가격</td>
-			<td colspan="4"><input type="text" name="price"></td>
+			<td colspan="4"><input type="text" name="price" size="100"></td>
 		</tr>
 		<tr>
 			<td align="center">상세정보</td>
-			<td colspan="4"><input type="text" name="description"></td>
+			<td colspan="4"><input type="text" name="description" size="100"></td>
 		</tr>
 		<tr>
 			<td align="center">제조사</td>
-			<td colspan="4"><input type="text" name="manufacturer"></td>
+			<td colspan="4"><input type="text" name="manufacturer" size="100"></td>
 		</tr>
 		<tr>
 			<td align="center">분류</td>
-			<td colspan="4"><input type="text" name="category"></td>
+			<td><input type="text" name="category"></td>
 			<td align="center">재고수</td>
-			<td colspan="4"><input type="text" name="unitsInstock"></td>
+			<td><input type="text" name="unitsInstock"></td>
 		</tr>
 		<tr>
 			<td align="center">상태</td>
-			<td>
+			<td colspan="4">
 				<input type="radio" name="condition" value="1" checked>신규제품
 				<input type="radio" name="condition" value="2">중고제품
 				<input type="radio" name="condition" value="3">재생제품
 			</td>
 		</tr>
 		<tr>
-			<td colspan="4">
+			<td colspan="4" align="center">
 				<input type="button" value="상품등록" onclick="javascript:insert_product()">
 				<input type="reset" value="다시작성">
 			</td>

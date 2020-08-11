@@ -52,7 +52,7 @@ function insert_member() {
 			</td>
 		</tr>
 		<tr>
-			<td>생년월일</td>
+			<td align="center">생년월일</td>
 			<td><input type="text" name="birth"></td>
 		</tr>
 		<tr>
@@ -71,8 +71,8 @@ function insert_member() {
 			<td align="center">핸드폰</td>
 			<td>
 				<select name="phone_select">
-					<option value="1">010</option>
-					<option value="2">011</option>
+					<option value="010">010</option>
+					<option value="011">011</option>
 				</select>
 				-
 				<input type="text" name="phone_1" size="10">

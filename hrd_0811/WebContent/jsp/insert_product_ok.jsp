@@ -16,6 +16,7 @@
 	String condition = request.getParameter("condition");
 	try {
 		sql = "INSERT INTO product0811 VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, code);
 		pstmt.setString(2, name);
 		pstmt.setInt(3, price);
