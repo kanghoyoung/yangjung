@@ -12,7 +12,7 @@
 		<li><a href="insert_member.jsp">회원 정보 등록</a></li>
 		<li><a href="insert_product.jsp">상품정보 등록</a></li>
 		<li><a href="select_member.jsp">회원 정보 목록</a></li>
-		<li><a href="#">상품정보 목록</a></li>
+		<li><a href="select_product.jsp">상품정보 목록</a></li>
 		<li><a href="index.jsp">홈으로</a></li>
 	</ul>
 </nav>
