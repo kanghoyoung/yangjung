@@ -53,16 +53,16 @@
 			String bun = sno.substring(3);
 %>
 	<tr>
-		<td><%=hak %></td>
-		<td><%=ban %></td>
-		<td><%=bun %></td>
-		<td><%=sname %></td>
-		<td><%=kor %></td>
-		<td><%=eng %></td>
-		<td><%=math %></td>
-		<td><%=hist %></td>
-		<td><%=sum %></td>
-		<td><%=avg %></td>
+		<td align="center"><%=hak %></td>
+		<td align="center"><%=ban %></td>
+		<td align="center"><%=bun %></td>
+		<td align="center"><%=sname %></td>
+		<td align="right"><%=kor %></td>
+		<td align="right"><%=eng %></td>
+		<td align="right"><%=math %></td>
+		<td align="right"><%=hist %></td>
+		<td align="right"><%=sum %></td>
+		<td align="right"><%=avg %></td>
 	</tr>
 <%
 		} // while
@@ -96,12 +96,12 @@
 		<td></td>
 		<td></td>
 		<th>총점</th>
-		<td><%=Ksum %></td>
-		<td><%=Esum %></td>
-		<td><%=Msum %></td>
-		<td><%=Hsum %></td>
-		<td><%=Ssum %></td>
-		<td><%=Asum %></td>
+		<td align="right"><%=Ksum %></td>
+		<td align="right"><%=Esum %></td>
+		<td align="right"><%=Msum %></td>
+		<td align="right"><%=Hsum %></td>
+		<td align="right"><%=Ssum %></td>
+		<td align="right"><%=Asum %></td>
 	</tr>
 <%
 		} // while
@@ -135,12 +135,12 @@
 			<td></td>
 			<td></td>
 			<th>총평균</th>
-			<td><%=Kavg %></td>
-			<td><%=Eavg %></td>
-			<td><%=Mavg %></td>
-			<td><%=Havg %></td>
-			<td><%=Savg %></td>
-			<td><%=Aavg %></td>
+			<td align="right"><%=Kavg %></td>
+			<td align="right"><%=Eavg %></td>
+			<td align="right"><%=Mavg %></td>
+			<td align="right"><%=Havg %></td>
+			<td align="right"><%=Savg %></td>
+			<td align="right"><%=Aavg %></td>
 		</tr>
 <%
 		} // while
