@@ -8,6 +8,7 @@
 </head>
 <body>
 <header>
+<br>
 <div class="header">
 (과정평가형 정보처리 산업기사)인사관리 시스템ver1.0
 </div>

@@ -12,7 +12,7 @@
 		<li><a href="select_insa.jsp">조회</a></li>
 		<li><a href="insert_insa.jsp">사원등록</a></li>
 		<li><a href="#">정보변경</a></li>
-		<li><a href="#">퇴사처리</a></li>
+		<li><a href="delete.jsp">퇴사처리</a></li>
 		<li><a href="#">종료</a></li>
 		<li><a href="index.jsp">홈으로</a></li>
 	</ul>
