@@ -16,6 +16,7 @@
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	String sql = "";
+	int no = 0;
 	
 	try {
 		sql = "SELECT * FROM insaTbl";
@@ -37,6 +38,7 @@
 	</tr>
 <%
 	while(rs.next()) {
+		no++;
 		int id = rs.getInt(1); // 사원번호
 		String name = rs.getString(2); // 사원명
 		String dept = rs.getString(3); // 소속부서
@@ -45,7 +47,7 @@
 		String phone = rs.getString(6); // 연락처
 %>
 	<tr>
-		<td align="center"></td>
+		<td align="center"><%=no %></td>
 		<td align="center"><%=name %></td>
 		<td align="center"><a href="modify.jsp?id=<%=id %>"><%=id %></a></td>
 		<td align="center"><%=position %></td>
