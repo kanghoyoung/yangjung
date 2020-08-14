@@ -28,7 +28,7 @@ nav ul {
 nav ul li {
 	float: left;
 	list-style: none;
-	margin: 0 10px;
+	margin: 0 20px;
 }
 
 nav a {
@@ -41,7 +41,8 @@ nav a {
 
 footer {
 	width: 100%;
-	height: 40px;
+	height: 50px;
+	background-color: #666666;
 }
 
 section {
@@ -54,6 +55,6 @@ table {
 	width: 80%;
 }
 
-.footer {
-	test-align: center;
+.center {
+	text-align: center;
 }

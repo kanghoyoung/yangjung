@@ -10,7 +10,7 @@
 <nav>
 	<ul>
 		<li><a href="insert_book.jsp">도서정보 등록</a></li>
-		<li><a href="#">도새 대출정보 등록</a></li>
+		<li><a href="#">도서 대출정보 등록</a></li>
 		<li><a href="select_book.jsp">도서 정보 조회</a></li>
 		<li><a href="#">도서 대출 정보 조회</a></li>
 		<li><a href="index.jsp">홈으로.</a></li>
