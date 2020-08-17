@@ -71,7 +71,7 @@ function ok() {
 			<tr>
 				<td colspan="4" align="center">
 					<input type="button" value="저장" onclick="javascript:ok()">
-					<input type="button" value="취소">
+					<input type="button" value="취소" onclick="location='index.jsp'">
 				</td>
 			</tr>
 		</table>

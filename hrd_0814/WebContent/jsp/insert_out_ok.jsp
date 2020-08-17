@@ -14,8 +14,16 @@
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	String sql = "";
-
 	try {
+		sql = "INSERT INTO reservation_tbl VALUES(?, ?, ?, ?, ?, ?, ?)";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, lentno);
+		pstmt.setString(2, custname);
+		pstmt.setString(3, bookno);
+		pstmt.setString(4, lentno);
+		pstmt.setString(5, lentno);
+		pstmt.setString(6, lentno);
+		pstmt.setString(7, lentno);
 		
 	} catch (Exception e) {
 		e.printStackTrace();
