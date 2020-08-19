@@ -8,7 +8,7 @@
 <link type="text/css" rel="stylesheet" href="../css/index.css">
 <script>
 function check() {
-	if(document.form.code.value=="") {
+	if(document.form.code.value == '') {
 		alert('상품 코드를 입력하세요');
 		document.form.code.focus();
 		return;
@@ -38,12 +38,12 @@ function check() {
 		</tr>
 		<tr>
 			<td>배달주소</td>
-			<td><input type="text" name="address"></td>
+			<td colspan="4"><input type="text" name="address"></td>
 		</tr>
 		<tr>
 			<td>결제방법</td>
 			<td>
-				<input type="radio" name="pay" value="1">현금
+				<input type="radio" name="pay" value="1" checked>현금
 				<input type="radio" name="pay" value="2">카드
 			</td>
 			<td>카드번호</td>
@@ -57,7 +57,7 @@ function check() {
 		</tr>
 		<tr>
 			<td colspan="4" align="center">
-				<input type="button" value="목록">
+				<input type="button" value="목록" onclick="location='orderSelect.jsp'">
 				<input type="button" value="저장" onclick="javascript:check()">
 			</td>
 		</tr>

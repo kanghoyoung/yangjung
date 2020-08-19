@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*" %>
 <%@ include file="db.jsp" %>
 <!DOCTYPE html>
 <html>
@@ -14,9 +13,25 @@
 <jsp:include page="nav.jsp"></jsp:include>
 <section>
 <%
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+	String sql = "";
+	String cnt = "";
+	int count = 0;
 	
+	try {
+		cnt = "SELECT COUNT(*) FROM productTbl";
+		pstmt = conn.prepareStatement(cnt);
+		rs = pstmt.executeQuery();
+		if(rs.next()) {
+			count = rs.getInt(1);
+		}
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
 %>
 <h2 align="center">주문 정보 목록</h2>
+<%out.println("총 " + count + "개의 상품이 있습니다."); %>
 <table border="1">
 	<tr>
 		<th>상품코드</th>
