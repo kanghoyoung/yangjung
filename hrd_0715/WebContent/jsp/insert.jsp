@@ -8,7 +8,12 @@
 <link type="text/css" rel="stylesheet" href="../css/index.css">
 <script>
 function check() {
-	
+	if(document.form.code.value == '') {
+		alert('상품코드를 입력하세요.');
+		document.form.code.focus();
+		return;
+	}
+	document.form.submit();
 }
 </script>
 </head>
@@ -17,7 +22,7 @@ function check() {
 <jsp:include page="nav.jsp"></jsp:include>
 <section>
 <h2 align="center">상품추가</h2>
-<form name="form" method="post" action="insert_ok">
+<form name="form" method="post" action="insert_ok.jsp">
 <table border="1">
 	<tr>
 		<td>상품코드</td>
@@ -25,15 +30,15 @@ function check() {
 		<td>상품분류</td>
 		<td>
 			<select name="category">
-				<option value="0">상품 분류</option>
-				<option value="1">가구</option>
-				<option value="2">전기/전자</option>
-				<option value="3">부엌용품</option>
-				<option value="4">의류</option>
-				<option value="5">보석및 액세서리</option>
-				<option value="6">헬스기구</option>
-				<option value="7">컴퓨터 관련</option>
-				<option value="8">기타</option>
+				<option value="상품 분류">상품 분류</option>
+				<option value="가구">가구</option>
+				<option value="전기/전자">전기/전자</option>
+				<option value="부엌용품">부엌용품</option>
+				<option value="의류">의류</option>
+				<option value="보석및 액세서리">보석및 액세서리</option>
+				<option value="헬스기구">헬스기구</option>
+				<option value="컴퓨터 관련">컴퓨터 관련</option>
+				<option value="기타">기타</option>
 			</select>
 		</td>
 	</tr>
@@ -45,7 +50,7 @@ function check() {
 	</tr>
 	<tr>
 		<td>제조사 이름</td>
-		<td><input type="text" name="sname"></td>
+		<td colspan="4"><input type="text" name="sname"></td>
 	</tr>
 	<tr>
 		<td>시중 가격</td>
@@ -62,7 +67,7 @@ function check() {
 	<tr>
 		<td>메모</td>
 		<td colspan="4">
-			<textarea cols="30" rows="8" name="memo"></textarea>
+			<textarea cols="50" rows="8" name="memo"></textarea>
 		</td>
 	</tr>
 	<tr>
