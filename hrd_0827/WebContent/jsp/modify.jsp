@@ -71,8 +71,35 @@ function addMember() {
 		alert('비밀번호를 입력하세요.');
 		document.form.password.focus();
 		return;
+	} else if (document.form.password_ok.value == '') {
+		alert('비밀번호 확인을 입력하세요.');
+		document.form.password_ok.focus();
+		return;
 	} else {
 		document.form.submit();
+	}
+}
+
+function email_change() {
+	// 직접입력
+	if (document.form.select_mail.options[document.form.select_mail.selectedIndex].value == '0') {
+		document.form.mail2.disabled = true;
+		document.form.mail2.value = "";
+	}
+	if (document.form.select_mail.options[document.form.select_mail.selectedIndex].value == '9') {
+		document.form.mail2.disabled = false;
+		document.form.mail2.value = "";
+		document.form.mail2.focus();
+	} else {
+		document.form.mail2.disabled = true;
+		document.form.mail2.value = document.form.select_mail.options[document.form.select_mail.selectedIndex].value;
+	}
+}
+
+function pw_check() {
+	if (document.form.password.value != document.form.password_ok.value) {
+		alert('비밀번호를 동일하게 입력하세요.');
+		document.form.password_ok.value = "";
 	}
 }
 </script>

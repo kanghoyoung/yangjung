@@ -1,5 +1,33 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="dbconnection.jsp" %>
+<%
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+	String sql = "";
+	int max = 0;
+	try {
+		sql = "SELECT MAX(id) FROM member0824";
+		pstmt = conn.prepareStatement(sql);
+		rs = pstmt.executeQuery();
+		if (rs.next()) {
+			max = rs.getInt(1);
+			max++;
+		}
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		if(conn != null) {
+			conn.close();
+		}
+		if(pstmt != null) {
+			pstmt.close();
+		}
+		if(rs != null) {
+			rs.close();
+		}
+	}
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,8 +43,35 @@ function addMember() {
 		alert('비밀번호를 입력하세요.');
 		document.form.password.focus();
 		return;
+	} else if (document.form.password_ok.value == '') {
+		alert('비밀번호 확인을 입력하세요.');
+		document.form.password_ok.focus();
+		return;
 	} else {
 		document.form.submit();
+	}
+}
+
+function email_change() {
+	// 직접입력
+	if (document.form.select_mail.options[document.form.select_mail.selectedIndex].value == '0') {
+		document.form.mail2.disabled = true;
+		document.form.mail2.value = "";
+	}
+	if (document.form.select_mail.options[document.form.select_mail.selectedIndex].value == '9') {
+		document.form.mail2.disabled = false;
+		document.form.mail2.value = "";
+		document.form.mail2.focus();
+	} else {
+		document.form.mail2.disabled = true;
+		document.form.mail2.value = document.form.select_mail.options[document.form.select_mail.selectedIndex].value;
+	}
+}
+
+function pw_check() {
+	if (document.form.password.value != document.form.password_ok.value) {
+		alert('비밀번호를 동일하게 입력하세요.');
+		document.form.password_ok.value = "";
 	}
 }
 </script>
@@ -32,7 +87,7 @@ function addMember() {
 		<table border="1">
 			<tr>
 				<th>아이디</th>
-				<td><input type="text" name="id">(마지막 번호+1)</td>
+				<td><input type="text" name="id" value="<%=max %>">(마지막 번호+1)</td>
 			</tr>
 			<tr>
 				<th>성 명</th>
@@ -44,7 +99,7 @@ function addMember() {
 			</tr>
 			<tr>
 				<th>비밀번호 확인</th>
-				<td><input type="password" name="password_ok"></td>
+				<td><input type="password" name="password_ok" onchange="javascript:pw_check()"></td>
 			</tr>
 			<tr>
 				<th>성 별</th>
@@ -113,10 +168,10 @@ function addMember() {
 				<td>
 					<input type="text" name="mail" placeholder="이메일">
 					@
-					<input type="text" name="mail2">
-					<select name="mail">
-						<option value="">선택하세요</option>
-						<option value="register">직접입력</option>
+					<input type="text" name="mail2" disabled>
+					<select name="select_mail" onchange="email_change()">
+						<option value="0">선택하세요</option>
+						<option value="9">직접입력</option>
 						<option value="naver.com">naver.com</option>
 						<option value="daum.net">daum.net</option>
 						<option value="nate.com">nate.com</option>
