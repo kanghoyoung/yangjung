@@ -10,8 +10,8 @@
 	<nav>
 		<ul>
 			<li><a href="register_cust.jsp">회원등록</a></li>
-			<li><a href="#">회원목록조회/수정</a></li>
-			<li><a href="#">회원매출조회</a></li>
+			<li><a href="select_cust.jsp">회원목록조회/수정</a></li>
+			<li><a href="select_member.jsp">회원매출조회</a></li>
 			<li><a href="index.jsp">홈으로.</a></li>
 		</ul>
 	</nav>

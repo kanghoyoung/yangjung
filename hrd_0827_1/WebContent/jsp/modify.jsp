@@ -2,27 +2,50 @@
     pageEncoding="UTF-8"%>
 <%@ include file="dbconnection.jsp" %>
 <%
+	int custno = Integer.parseInt(request.getParameter("custno"));
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	String sql = "";
-	int count = 0;
+	String custname = "";
+	String phone = "";
+	String address = "";
+	String joindate = "";
+	String grade = "";
+	String city = "";
+	String sub_joindate = "";
 	try {
-		sql = "SELECT MAX(custno) FROM member0827";
-		pstmt = conn.prepareStatement(sql);
+		String update = "SELECT * FROM member0827 WHERE custno = ?";
+		pstmt = conn.prepareStatement(update);
+		pstmt.setInt(1, custno);
 		rs = pstmt.executeQuery();
 		if(rs.next()) {
-			count = rs.getInt(1);
-		}
-		count++;
+			custname = rs.getString(2);
+			phone = rs.getString(3);
+			address = rs.getString(4);
+			joindate = rs.getString(5);
+			grade = rs.getString(6);
+			city = rs.getString(7);
+			sub_joindate = joindate.substring(0, 10);
+		} 
 	} catch (Exception e) {
 		e.printStackTrace();
+	} finally {
+		if(conn != null) {
+			conn.close();
+		}
+		if(pstmt != null) {
+			pstmt.close();
+		}
+		if(rs != null) {
+			rs.close();
+		}
 	}
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원 등록</title>
+<title>홈쇼핑 회원 정보 수정</title>
 <script>
 function check() {
 	if(document.form.name.value == '') {
@@ -61,42 +84,42 @@ function check() {
 <section>
 <br><br><br>
 	<div class="section">
-		<b>홈쇼핑 회원 등록</b>
+		<b>홈쇼핑 회원 정보 수정</b>
 	</div>
 	<br>
-	<form name="form" method="post" action="register_cust_ok.jsp">
+	<form name="form" method="post" action="modify_ok.jsp">
 		<table border="1">
 			<tr>
-				<th>회원번호(자동발생)</th>
-				<td><input type="text" name="custno" value="<%=count %>"></td>
+				<th>회원번호</th>
+				<td><input type="text" name="custno" value="<%=custno %>"></td>
 			</tr>
 			<tr>
 				<th>회원성명</th>
-				<td><input type="text" name="name"></td>
+				<td><input type="text" name="name" value="<%=custname %>"></td>
 			</tr>
 			<tr>
 				<th>회원전화</th>
-				<td><input type="text" name="phone"></td>
+				<td><input type="text" name="phone" value="<%=phone %>"></td>
 			</tr>
 			<tr>
 				<th>회원주소</th>
-				<td><input type="text" name="address"></td>
+				<td><input type="text" name="address" value="<%=address %>"></td>
 			</tr>
 			<tr>
 				<th>가입일자</th>
-				<td><input type="text" name="date"></td>
+				<td><input type="text" name="date" value="<%=sub_joindate %>"></td>
 			</tr>
 			<tr>
 				<th>고객등급[A:VIP, B:일반, C:직원]</th>
-				<td><input type="text" name="grade"></td>
+				<td><input type="text" name="grade" value="<%=grade %>"></td>
 			</tr>
 			<tr>
 				<th>도시코드</th>
-				<td><input type="text" name="city"></td>
+				<td><input type="text" name="city" value="<%=city %>"></td>
 			</tr>
 			<tr>
 				<td align="center" colspan="2">
-					<input type="button" value="등 록" onclick="javascript:check()">
+					<input type="button" value="수 정" onclick="javascript:check()">
 					<input type="button" value="조 회" onclick="location.href='select_cust.jsp'">
 				</td>
 			</tr>
