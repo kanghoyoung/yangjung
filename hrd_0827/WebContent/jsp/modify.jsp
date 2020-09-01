@@ -40,7 +40,7 @@
 			
 			tmp = mail.indexOf("@");
 			email = mail.substring(0, tmp);
-			email2 = mail.substring(tmp);
+			email2 = mail.substring(tmp+1);
 		}
 	} catch (Exception e) {
 		e.printStackTrace();
@@ -127,7 +127,7 @@ function pw_check() {
 			</tr>
 			<tr>
 				<th>비밀번호 확인</th>
-				<td><input type="password" name="password_ok" value="<%=password %>"></td>
+				<td><input type="password" name="password_ok" value="<%=password %>" onchange="javascript:pw_check()"></td>
 			</tr>
 			<tr>
 				<th>성 별</th>
@@ -196,10 +196,10 @@ function pw_check() {
 				<td>
 					<input type="text" name="mail" placeholder="이메일" value="<%=email %>">
 					@
-					<input type="text" name="mail2">
-					<select name="mail">
-						<option value="">선택하세요</option>
-						<option value="register">직접입력</option>
+					<input type="text" name="mail2" value="<%=email2 %>" disabled>
+					<select name="select_mail" onchange="email_change()">
+						<option value="0">선택하세요</option>
+						<option value="9">직접입력</option>
 						<option value="naver.com">naver.com</option>
 						<option value="daum.net">daum.net</option>
 						<option value="nate.com">nate.com</option>

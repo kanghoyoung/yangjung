@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>쇼핑몰에 오신것을 환영합니다.</title>
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>

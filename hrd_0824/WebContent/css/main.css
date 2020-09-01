@@ -9,7 +9,7 @@ header {
 	height: 100px;
 	background-color: #CCCCCC;
 	padding: 15px 0 0 20px;
-	color: white;
+	color: black;
 }
 
 nav {
@@ -58,8 +58,13 @@ table {
 
 section>img {
 	border: none;
-	height: 77%;
+	height: 96%;
 	width: 100%;
+}
+
+.header {
+	font-size: 50px;
+	text-align: center;
 }
 
 .center {

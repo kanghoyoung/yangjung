@@ -4,8 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<link type="text/css" rel="stylesheet" href="../css/main.css">
+<title>회원 가입 등록</title>
 <script>
 function ok() {
 	if(document.form.name.value === '') {

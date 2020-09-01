@@ -59,7 +59,7 @@ function check() {
 <br><br><br>
 <h1 align="center">상품 등록 화면</h1>
 <br>
-	<form name="form" method="post" action="addProduct_ok.jsp">
+	<form name="form" method="post" action="productModify_ok.jsp">
 		<table border="1">
 			<tr>
 				<th>상품코드</th>
