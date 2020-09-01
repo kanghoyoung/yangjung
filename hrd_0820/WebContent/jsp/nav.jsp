@@ -12,7 +12,7 @@
 		<li><a href="insert_info.jsp">사원등록</a></li>
 		<li><a href="#">호봉등록</a></li>
 		<li><a href="#">수당등록</a></li>
-		<li><a href="#">사원정보</a></li>
+		<li><a href="select_info.jsp">사원정보</a></li>
 		<li><a href="#">호봉정보</a></li>
 		<li><a href="#">수당정보</a></li>
 		<li><a href="#">종료</a></li>

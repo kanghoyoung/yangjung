@@ -4,8 +4,9 @@
 <%
 	request.setCharacterEncoding("utf-8");
 	Connection conn = null;
+	String url = "";
 	try {
-		String url = "jdbc:oracle:thin:@//localhost:1521/xe";
+		url = "jdbc:oracle:thin:@//localhost:1521/xe";
 		Class.forName("oracle.jdbc.OracleDriver");
 		conn = DriverManager.getConnection(url, "system", "1234");
 	} catch (Exception e) {

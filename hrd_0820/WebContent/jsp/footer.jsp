@@ -7,10 +7,9 @@
 <title>main화면</title>
 </head>
 <body>
-<footer>
-<div class="center">
-COPYRIGHT 2020 YANGJUNG ALL RIGHT RESERVED.
-</div>
-</footer>
+	<footer>
+	<br>
+		COPYRIGHT 2020 YANGJUNG ALL RIGHT RESERVED.
+	</footer>
 </body>
 </html>
