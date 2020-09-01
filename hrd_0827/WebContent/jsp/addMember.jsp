@@ -57,11 +57,30 @@ function email_change() {
 	if (document.form.select_mail.options[document.form.select_mail.selectedIndex].value == '0') {
 		document.form.mail2.disabled = true;
 		document.form.mail2.value = "";
-	}
-	if (document.form.select_mail.options[document.form.select_mail.selectedIndex].value == '9') {
+	} else if (document.form.select_mail.options[document.form.select_mail.selectedIndex].value == '9') {
 		document.form.mail2.disabled = false;
 		document.form.mail2.value = "";
 		document.form.mail2.focus();
+	} else if (document.form.select_mail.options[document.form.select_mail.selectedIndex].value == 'naver.com') {
+		document.form.mail2.disabled = false;
+		document.form.mail2.value = "naver.com";
+		
+	} else if (document.form.select_mail.options[document.form.select_mail.selectedIndex].value == 'daum.net') {
+		document.form.mail2.disabled = false;
+		document.form.mail2.value = "daum.net";
+		
+	} else if (document.form.select_mail.options[document.form.select_mail.selectedIndex].value == 'nate.com') {
+		document.form.mail2.disabled = false;
+		document.form.mail2.value = "nate.com";
+		
+	} else if (document.form.select_mail.options[document.form.select_mail.selectedIndex].value == 'hotmail.com') {
+		document.form.mail2.disabled = false;
+		document.form.mail2.value = "hotmail.com";
+		
+	} else if (document.form.select_mail.options[document.form.select_mail.selectedIndex].value == 'gmail.com') {
+		document.form.mail2.disabled = false;
+		document.form.mail2.value = "gmail.com";
+	
 	} else {
 		document.form.mail2.disabled = true;
 		document.form.mail2.value = document.form.select_mail.options[document.form.select_mail.selectedIndex].value;

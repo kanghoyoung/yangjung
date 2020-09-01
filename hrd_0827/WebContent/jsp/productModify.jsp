@@ -1,5 +1,46 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="dbconnection.jsp" %>
+<%
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+	String sql = "";
+	String id = request.getParameter("id");
+	String name = "";
+	String price = "";
+	String desc = "";
+	String category = "";
+	String manufacturer = "";
+	String unitsInstock = "";
+	String condition = "";
+	try {
+		String modify = "SELECT * FROM product0824 WHERE productId = ?";
+		pstmt = conn.prepareStatement(modify);
+		pstmt.setString(1, id);
+		rs = pstmt.executeQuery();
+		if (rs.next()) {
+			name = rs.getString(2);
+			price = rs.getString(3);
+			desc = rs.getString(4);
+			category = rs.getString(5);
+			manufacturer = rs.getString(6);
+			unitsInstock = rs.getString(7);
+			condition = rs.getString(8);
+		}
+	} catch (Exception e) {
+		e.printStackTrace();
+	} finally {
+		if (conn != null) {
+			conn.close();
+		}
+		if (pstmt != null) {
+			pstmt.close();
+		}
+		if (rs != null) {
+			rs.close();
+		}
+	}
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,38 +104,38 @@ function check() {
 		<table border="1">
 			<tr>
 				<th>상품코드</th>
-				<td><input type="text" name="code" size="50"></td>
+				<td><input type="text" name="code" size="50" value="<%=id %>"></td>
 			</tr>
 			<tr>
 				<th>상품명</th>
-				<td><input type="text" id="ProductName" name="name" size="50"></td>
+				<td><input type="text" id="ProductName" name="name" size="50" value="<%=name %>"></td>
 			</tr>
 			<tr>
 				<th>가 격</th>
-				<td><input type="text" id="ProductPrice" name="price" size="50"></td>
+				<td><input type="text" id="ProductPrice" name="price" size="50" value="<%=price %>"></td>
 			</tr>
 			<tr>
 				<th>상세정보</th>
-				<td><input type="text" name="description" size="50"></td>
+				<td><input type="text" name="description" size="50" value="<%=desc %>"></td>
 			</tr>
 			<tr>
 				<th>제조사</th>
-				<td><input type="text" name="manufacturer" size="50"></td>
+				<td><input type="text" name="manufacturer" size="50" value="<%=manufacturer %>"></td>
 			</tr>
 			<tr>
 				<th>분 류</th>
-				<td><input type="text" name="category" size="50"></td>
+				<td><input type="text" name="category" size="50" value="<%=category %>"></td>
 			</tr>
 			<tr>
 				<th>재고수</th>
-				<td><input type="text" name="unitsInstock" size="50"></td>
+				<td><input type="text" name="unitsInstock" size="50" value="<%=unitsInstock %>"></td>
 			</tr>
 			<tr>
 				<th>상 태</th>
 				<td>
-					<input type="radio" name="condition" value="1" checked>신규 제품
-					<input type="radio" name="condition" value="2">중고 제품
-					<input type="radio" name="condition" value="3">재생 제품
+					<input type="radio" name="condition" value="1" <% if(condition.equals("1")) {%> checked <%} %> checked>신규 제품
+					<input type="radio" name="condition" value="2" <% if(condition.equals("2")) {%> checked <%} %>>중고 제품
+					<input type="radio" name="condition" value="3" <% if(condition.equals("3")) {%> checked <%} %>>재생 제품
 				</td>
 			</tr>
 			<tr>

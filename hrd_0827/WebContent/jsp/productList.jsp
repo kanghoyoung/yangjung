@@ -86,7 +86,7 @@
 		}
 %>
 			</td>
-			<td align="center"><a href="productModify.jsp">수정</a> / <a href="productDelete.jsp">삭제</a></td>
+			<td align="center"><a href="productModify.jsp?id=<%=id %>">수정</a> / <a onclick="return confirm('정말로 삭제하시겠습니까?')" href="productDelete.jsp?id=<%=id %>">삭제</a></td>
 		</tr>
 <%
 		} // while
