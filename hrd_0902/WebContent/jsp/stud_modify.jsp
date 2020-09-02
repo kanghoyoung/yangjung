@@ -12,7 +12,6 @@
 	String address = "";
 	String phone = "";
 	String hobby = "";
-	boolean bool = false;
 	String[] split_hobby = new String[100];
 	try {
 		sql = "SELECT * FROM stud0902 WHERE studno = ?";
@@ -109,7 +108,6 @@ function check() {
 <% 
 					for (String s : split_hobby) {
 						if ("프로그램".equals(s)) {
-							bool = true;
 							%>
 							checked
 							<%
@@ -123,7 +121,6 @@ function check() {
 <% 
 					for (String s : split_hobby) {
 						if ("독서".equals(s)) {
-							bool = true;
 							%>
 							checked
 							<%
@@ -138,7 +135,6 @@ function check() {
 <% 
 					for (String s : split_hobby) {
 						if ("등산".equals(s)) {
-							bool = true;
 							%>
 							checked
 							<%
@@ -154,7 +150,6 @@ function check() {
 <% 
 					for (String s : split_hobby) {
 						if ("여행".equals(s)) {
-							bool = true;
 							%>
 							checked
 							<%
@@ -170,7 +165,6 @@ function check() {
 <% 
 					for (String s : split_hobby) {
 						if ("낚시".equals(s)) {
-							bool = true;
 							%>
 							checked
 							<%
@@ -186,7 +180,6 @@ function check() {
 <% 
 					for (String s : split_hobby) {
 						if ("영화보기".equals(s)) {
-							bool = true;
 							%>
 							checked
 							<%
@@ -202,7 +195,6 @@ function check() {
 <% 
 					for (String s : split_hobby) {
 						if ("잠자기".equals(s)) {
-							bool = true;
 							%>
 							checked
 							<%
@@ -218,7 +210,6 @@ function check() {
 <% 
 					for (String s : split_hobby) {
 						if ("멍때리기".equals(s)) {
-							bool = true;
 							%>
 							checked
 							<%
