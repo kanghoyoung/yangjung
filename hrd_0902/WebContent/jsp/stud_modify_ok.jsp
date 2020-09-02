@@ -12,6 +12,7 @@
 	String[] hobby = request.getParameterValues("hobby");
 	String address = request.getParameter("address");
 	String phone = request.getParameter("phone");
+	
 	String tmp = "";
 	if (hobby != null) {
 		for(int i=0; i<hobby.length; i++) {
@@ -22,21 +23,22 @@
 			}
 		} //for
 	} // if
+	
 	try {
-		sql = "INSERT INTO stud0902 VALUES (?, ?, ?, ?, ?, ?, ?)";
+		sql = "UPDATE stud0902 SET name = ?, dept = ?, position = ?, address = ?, phone = ?, hobby = ? WHERE studno = ?";
 		pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, hakbun);
-		pstmt.setString(2, name);
-		pstmt.setString(3, hakgwa);
-		pstmt.setString(4, hakyen);
-		pstmt.setString(5, address);
-		pstmt.setString(6, phone);
-		pstmt.setString(7, tmp);
+		pstmt.setString(1, name);
+		pstmt.setString(2, hakgwa);
+		pstmt.setString(3, hakyen);
+		pstmt.setString(4, address);
+		pstmt.setString(5, phone);
+		pstmt.setString(6, tmp);
+		pstmt.setString(7, hakbun);
 		pstmt.executeUpdate();
 %>
 <script>
-alert('입력되었습니다.');
-location.href="index.jsp"
+alert('수정되었습니다.');
+location.href="select_stud.jsp";
 </script>
 <%
 	} catch (Exception e) {

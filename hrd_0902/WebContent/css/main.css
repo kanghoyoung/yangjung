@@ -58,3 +58,7 @@ table {
 	margin: auto;
 	width: 80%;
 }
+
+.center {
+	text-align: center;
+}
