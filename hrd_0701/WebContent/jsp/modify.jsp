@@ -90,7 +90,7 @@ function check() {
 				<th>담 당 강 사</th>
 				<td>
 					<select name="lecturer">
-						<option value="" <% if (lecturer.equals("")) {%> selected <%} %>>담당강사 선택</option>
+						<option value="" <% if (lecturer.equals("0")) {%> selected <%} %>>담당강사 선택</option>
 						<option value="김교수" <% if (lecturer.equals("1") || lecturer.equals("김교수")) {%> selected <%} %>>김교수</option>
 						<option value="이교수" <% if (lecturer.equals("2") || lecturer.equals("이교수")) {%> selected <%} %>>이교수</option>
 						<option value="박교수" <% if (lecturer.equals("3") || lecturer.equals("박교수")) {%> selected <%} %>>박교수</option>
