@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="C:\jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="C:\jquery.mobile-1.4.5/jquery.js"></script>
+	<script src="C:\jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+
+<!-- Start of first page -->
+<div data-role="page" id="p1">
+
+	<div data-role="header">
+		<h1>Foo</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>첫 번째 페이지</p>
+		<p>View internal page called <a href="#bar">두 번째 페이지 가기</a></p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+<!-- Start of second page -->
+<div data-role="page" id="bar">
+
+	<div data-role="header">
+		<h1>Bar</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>두 번째 페이지</p>
+		<p><a href="#p1">첫번째 페이지 연결</a></p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+</body>
+</html>

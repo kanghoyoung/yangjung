@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="/css/jquery.mobile-1.4.5.min.css" />
+	<script src="/js/jquery.js"></script>
+	<script src="/js/jquery.mobile-1.4.5.min.js"></script>
+	
+	<script>
+function cal() {
+	var x = document.getElementById("x").value;
+	var y = document.getElementById("y").value;
+	var sum = parseInt(x) + parseInt(y);
+	document.getElementById("sum").value=sum;
+}
+document.write(x());
+</script>
+
+</head>
+<style>
+body {
+background-color: red;
+}
+</style>
+<body>
+
+<form>
+첫번째:
+<input id="x" /><br />
+두번째:
+<input id="y" /><br />
+합계:
+<input id="sum" /><br />
+<input type="button" value="계산" onclick="cal();" />
+</form>
+<div data-role="page">
+
+	<div data-role="header">
+	<a href="#" data-icon="arrow-l">이전</a>
+	<a href="#" data-icon="arrow-r">다음</a>
+	
+		<h1>Page Title</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>Page content goes here.</p>
+		<form>
+<fieldset data-role="controlgroup">
+    <legend>Vertical:</legend>
+    <input type="checkbox" name="checkbox-v-2a" id="checkbox-v-2a">
+    <label for="checkbox-v-2a">서울</label>
+    <input type="checkbox" name="checkbox-v-2b" id="checkbox-v-2b">
+    <label for="checkbox-v-2b">부산</label>
+    <input type="checkbox" name="checkbox-v-2c" id="checkbox-v-2c">
+    <label for="checkbox-v-2c">대구</label>
+	<input type="checkbox" name="checkbox-v-2d" id="checkbox-v-2d">
+    <label for="checkbox-v-2d">광주</label>
+</fieldset>
+</form>
+
+	<a href="1B.html" data-role="button">이동</a>
+
+	<ul data-role="listview" data-filter="true">
+		<li>
+			<a href="#">split icon description</a>
+		</li>
+		<li>
+			부모 항목1
+			<ul>
+				<li><a href="#">자식1</a></li>
+				<li><a href="#">자식2</a></li>
+			</ul>
+		</li>
+	</ul>
+	
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed">
+		<div data-role="navbar">
+		<ul>
+			<li><a class="ui-btn-active" href="#">One</a></li>
+			<li><a href="#">Two</a></li>
+			<li><a href="#">Three</a></li>
+		</ul>
+		</div><!-- navbar -->
+		<h2>....</h2>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>
